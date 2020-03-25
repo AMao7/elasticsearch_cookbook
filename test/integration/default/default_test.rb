@@ -17,6 +17,7 @@ end
 
 describe service "elasticsearch" do
   it { should be_enabled }
+  its('version') { should cmq '7.*' }
 end
 
 describe package('openjdk-8-jdk') do
