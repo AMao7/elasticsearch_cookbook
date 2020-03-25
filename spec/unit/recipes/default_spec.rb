@@ -26,5 +26,12 @@ describe 'elasticsearch_cookbook::default' do
     it 'should create an elasticsearch template in /etc/elasticsearch/elasticsearch.yml' do
       expect(chef_run).to create_template('/etc/elasticsearch/elasticsearch.yml')
     end
+    
+    it 'should install openjdk-8-jdk' do
+      expect(chef_run).to install_package "openjdk-8-jdk"
+    end
+    it 'should install apt-transport-https' do
+      expect(chef_run).to install_package "apt-transport-https"
+    end
   end
 end
